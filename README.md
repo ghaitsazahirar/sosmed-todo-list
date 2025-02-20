@@ -84,7 +84,7 @@ A simple CRUD API for managing to-do lists related to social media posts, built 
 ### Run Locally
 Start the server:
 ```bash
-npm start
+npm run dev
 ```
 The server will run at `http://localhost:3000`.
 
