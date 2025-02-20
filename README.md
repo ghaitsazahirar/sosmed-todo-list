@@ -1,4 +1,3 @@
-Berikut template untuk README.md file kamu, sudah disesuaikan dengan project "sosmed-todo-list" dan kebutuhanmu:
 
 ```markdown
 # Sosmed Todo List
