@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+
+    <!-- Flash messages -->
+    <% if (messages && messages.error) { %>
+        <p style="color: red;"><%= messages.error %></p>
+    <% } %>
+    <% if (messages && messages.success) { %>
+        <p style="color: green;"><%= messages.success %></p>
+    <% } %>
+
+    <!-- Todo List -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Post Title</th>
+                <th>Brand</th>
+                <th>Platform</th>
+                <th>Due Date</th>
+                <th>Payment</th>
+                <th>Status</th>
+                <th>User ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (todos && todos.length > 0) { %>
+                <% todos.forEach(todo => { %>
+                    <tr>
+                        <td><%= todo.id %></td>
+                        <td><%= todo.post_title %></td>
+                        <td><%= todo.brand %></td>
+                        <td><%= todo.platform %></td>
+                        <td><%= todo.due_date %></td>
+                        <td><%= todo.payment %></td>
+                        <td><%= todo.status %></td>
+                        <td><%= todo.user_id %></td>
+                        <td>
+                            <a href="/todos/update/<%= todo.id %>">Edit</a>
+                            <a href="/todos/delete/<%= todo.id %>">Delete</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            <% } else { %>
+                <tr>
+                    <td colspan="9">No todos found.</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
